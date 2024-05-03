@@ -8,9 +8,14 @@ import userRoute from "./route/user.route.js";
 
 const app = express();
 
-app.use(cors({
-    origin:['https://66351a214e766a1ea338b5f1--capable-daffodil-e33f70.netlify.app/','https://capable-daffodil-e33f70.netlify.app/']
-}));
+app.use(
+  cors({
+    origin: [
+      "https://capable-daffodil-e33f70.netlify.app/",
+      "https://66351a214e766a1ea338b5f1--capable-daffodil-e33f70.netlify.app/",
+    ],
+  })
+);
 app.use(express.json());
 
 dotenv.config();
@@ -20,13 +25,13 @@ const URI = process.env.MongoDBURI;
 
 // connect to mongoDB
 try {
-    mongoose.connect(URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-    console.log("Connected to mongoDB");
+  mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  console.log("Connected to mongoDB");
 } catch (error) {
-    console.log("Error: ", error);
+  console.log("Error: ", error);
 }
 
 // defining routes
@@ -34,5 +39,5 @@ app.use("/book", bookRoute);
 app.use("/user", userRoute);
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+  console.log(`Server is listening on port ${PORT}`);
 });
