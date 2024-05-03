@@ -12,7 +12,8 @@ app.use(
   cors({
     origin: [
       "https://capable-daffodil-e33f70.netlify.app/",
-      "https://capable-daffodil-e33f70.netlify.app"
+      "https://capable-daffodil-e33f70.netlify.app",
+      "https://6635115c470e751a5dc5ab88--capable-daffodil-e33f70.netlify.app/"
     ],
   })
 );
