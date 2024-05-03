@@ -9,7 +9,7 @@ import userRoute from "./route/user.route.js";
 const app = express();
 
 app.use(cors({
-    origin:['https://66351a214e766a1ea338b5f1--capable-daffodil-e33f70.netlify.app/']
+    origin:['https://66351a214e766a1ea338b5f1--capable-daffodil-e33f70.netlify.app/','https://capable-daffodil-e33f70.netlify.app/']
 }));
 app.use(express.json());
 
